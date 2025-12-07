@@ -1,4 +1,6 @@
 "use cache";
+import SuspendedDraftMode from "@/components/SuspendedDraftMode";
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -6,7 +8,9 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <SuspendedDraftMode>
+        <body>{children}</body>
+      </SuspendedDraftMode>
     </html>
   );
 }
